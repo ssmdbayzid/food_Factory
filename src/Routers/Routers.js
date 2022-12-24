@@ -1,10 +1,20 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import publicRouite from './public_Route'
+import privateRoute from './private_Route'
+// import privateRoute from './public_Route'
+
 
 const Routers = () => {
   return (
-    <div>
-      Routers
-    </div>
+    <Routes>
+      {
+        publicRouite.map((route) =>
+          <Route key={route.name} path={route.path} element={< route.component />}></Route>
+        )
+      }
+
+    </Routes>
   )
 }
 
