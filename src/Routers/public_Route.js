@@ -29,7 +29,7 @@ const publicRouite = [
     },
     {
         name: "Sign Up",
-        path: "/sign_up",
+        path: "/sign-up",
         component: Sign_Up,
     },    
 ]

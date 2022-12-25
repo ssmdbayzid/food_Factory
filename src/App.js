@@ -1,4 +1,6 @@
 import Layout from "./Layout/Layout";
+import 'remixicon/fonts/remixicon.css'
+
 
 
 function App() {

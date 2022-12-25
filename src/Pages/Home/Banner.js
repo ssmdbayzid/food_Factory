@@ -6,7 +6,9 @@ const Banner = () => {
     <div className='max-w-xl lg:p-8'>
       <h1 className="text-5xl font-bold">Box Office News!</h1>
       <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+      <button className="btn btn-primary">Get Started
+      <i class="ri-truck-line ri-lg"></i>
+      </button>
     </div>
     <div className='relative top-0 rounded-full shadow-2xl'>
     <img src="https://images.unsplash.com/photo-1542574271-7f3b92e6c821?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" className=" rounded-full w-[250px]" alt='' />
