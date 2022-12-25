@@ -9,8 +9,8 @@ const Routers = () => {
   return (
     <Routes>
       {
-        publicRouite.map((route) =>
-          <Route key={route.name} path={route.path} element={< route.component />}></Route>
+        publicRouite.map((route, index) =>
+          <Route key={index} path={route.path} element={< route.component />}></Route>
         )
       }
 

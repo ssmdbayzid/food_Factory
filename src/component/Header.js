@@ -96,7 +96,7 @@ const Header = () => {
   {/*//*  Responsibe Navigation bar */}
 
 
-    <div className={`absolute h-screen top-14 bg-slate-600 ${open ? "-right-[380px]" : "right-0"} w-full mx-auto z-20 pb-8 transition-all duration-500 ease-in justify-between text-white items-center lg:hidden `}>
+    <div className={`absolute h-screen top-14 bg-slate-600 md:-right-[600px] ${open ? "-right-[550px]" : "right-0"} w-full mx-auto z-20 pb-8 transition-all duration-500 ease-in justify-between text-white items-center lg:hidden `}>
           <ul className=' '>
             <li className='mt-3 text-center border-b-2'>
             <Link to="/home" className='hover:text-primary duration-200 font-semibold '>Home</Link>
