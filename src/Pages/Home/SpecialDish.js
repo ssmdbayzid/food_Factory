@@ -1,27 +1,75 @@
 import React from 'react'
+import {GiHamburger, GiFullPizza, } from "react-icons/gi"
+import {BiDrink} from "react-icons/bi"
+import {HiOutlineCake} from "react-icons/hi"
+import {SlCup} from "react-icons/sl"
+import {CiIceCream} from "react-icons/ci"
+
+
 
 const SpecialDish = () => {
+  const dishes = [
+    {
+      name: "Testy Burger",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: < GiHamburger />,
+      bg: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80"
+    },
+    {
+      name: "Testy Pizza",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: < GiFullPizza />,
+      bg: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+    },
+    {
+      name: "Cold Ice-Cream",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: < CiIceCream />,
+      bg: "https://images.unsplash.com/photo-1633933358116-a27b902fad35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+    },
+    {
+      name: "BiDrink",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: < BiDrink />,
+      bg: "https://images.unsplash.com/photo-1497534446932-c925b458314e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=472&q=80"
+    },
+    {
+      name: "Testy Sweet",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: < HiOutlineCake />,
+      bg: "https://images.unsplash.com/photo-1573750217191-d8e5c5f61f98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+    },
+    {
+      name: "Healthy Breakfast",
+      description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima, saepe officiis itaque odio natus quasi distinctio accusamus at dignissimos modi ex id!",
+      icon: <SlCup />,
+      bg: "https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+    },
+  ]
+
+
+  
   return (
     <div>       
         <h1 className="text-3xl text-primary font-bold text-center my-8">SpecialDish</h1>
-    <div className="mx-5 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-    <div className="group w-72 relative items-center justify-center overflow-hidden cursor-pointer">
-        <div className="h-96 w-72">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80" alt="img" srcset="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black"></div>
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-9 translate-y-[70%] group-hover:translate-y-0 transition-all duration-700">
-            <h1 className="text-3xl font-bold text-white" >Beauty</h1>
-            <p className="text-lg italic mb-3 text-white" >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui possimus atque vero unde voluptate ad. Vitae recusandae expedita inventore tenetur. </p>
-        </div>
-
+    <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+   {
+    dishes && dishes.map((dish, index)=><div key={index} className="group h-72 relative items-center justify-center overflow-hidden cursor-pointer shadow-lg bottom-1">
+    <div className="h-full w-full group-hover:-translate-y-[100%] transition-all duration-500">
+        <img src={dish.bg} alt="img" srcset="" className="h-full w-full object-cover" />
     </div>
-
+    <div className="absolute bottom-0 w-full py-2 text-center bg-black/50 group-hover:-top-12 duration-1000">
+      <h1 className="text-center text-2xl text-white">{dish.name}</h1>
     </div>
-
-    
+    <div className="absolute inset-0 flex flex-col items-center justify-center text-center md:px-9 px-2 translate-y-[100%] group-hover:translate-y-0 transition-all duration-500 bg-white">
+        <span className="block text-center text-5xl text-red-600 md:mb-2 mb-5">{dish.icon}</span>
+        <h1 className="text-3xl md:text-xl font-bold mb-5 text-red-600" >{dish.name}</h1>
+        <p className="text-lg md:text-lg italic mb-3 md:mb-2 leading-snug text-justify" >{dish.description}</p>
     </div>
-  )
+</div>)}
+      
+    </div>
+    </div>)
 }
 
 export default SpecialDish
