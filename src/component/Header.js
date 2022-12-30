@@ -47,10 +47,10 @@ const Header = () => {
       <div className='flex shadow-md py-3 px-5 lg:px-12 items-center justify-between'>
         <div className=''>
           <a 
-          className='text-2xl text-primary font-bold cursor-pointer'
+          className='text-2xl flex items-center text-primary font-bold cursor-pointer'
           href="/home"
           alt=""
-          >FoodFacty</a>   
+          ><img src="https://i.ibb.co/M1qmGCN/logo.jpg" alt="" srcset="" className="w-14 h-14 mr-3 rounded-lg" /> FoodFacty</a>   
               
         </div>
         <div className='lg:flex ml-auto w-3/4 justify-between items-center hidden '>

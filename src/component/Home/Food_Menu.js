@@ -52,6 +52,14 @@ const Food_Menu = () => {
           price: 25
         },
       ]
+
+      const input = <div className="rating rating-xs px-5">
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                    </div>
   return (<div>
       <h1 className="text-3xl text-primary font-bold text-center my-8">Food Menu</h1>
       <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -63,13 +71,7 @@ const Food_Menu = () => {
     <h2 className="text-xl font-bold text-primary">{item.name}</h2>
     <p className="text-lg font-semibold text text-primary">${item.price}</p>    
     </div>
-    <div className="rating rating-xs px-5">
-    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
-    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-    </div>
+      {input}
      <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
 
       <div className="flex justify-center items-center gap-5 px-5 bg-primary/30 py-1 hover:bg-primary/50 rounded mt-5 cursor-pointer">
