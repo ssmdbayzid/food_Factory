@@ -14,14 +14,14 @@ const Make_Resurvation = () => {
           <label className="label">
             <span className=" text-primary text-lg label-text">Email</span>
           </label>
-          <input type="text" placeholder="email" className="input bg-transparent border-b-primary" />
+          <input type="text" placeholder="email" className="input bg-transparent border-b-primary text-primary" />
           
         </div>
         <div className="form-control">
           <label className="label">
             <span className=" text-primary text-lg label-text">Password</span>
           </label>
-          <input type="text" placeholder="password" className="input bg-transparent border-b-primary" />
+          <input type="password" placeholder="password" className="input bg-transparent border-b-primary text-primary" />
           <label className="label">
             <a href="#" className=" text-primary text-lg label-text-alt link link-hover">Forgot password?</a>
           </label>
