@@ -74,7 +74,7 @@ const SpecialDish = () => {
         <h1 className="text-3xl text-primary font-bold text-center my-8">SpecialDish</h1>
     <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4">
    {
-    dishes && dishes.map((dish, index)=><div key={index} className="group h-60 w-full mx-3 relative items-center justify-center overflow-hidden cursor-pointer shadow-lg bottom-1 border-2 border-primary">
+    dishes && dishes.map((dish, index)=><div key={index} className="group h-60 w-full md:mx-3 relative items-center justify-center overflow-hidden cursor-pointer shadow-lg bottom-1 border-2 border-primary">
     <div  className="h-full w-full group-hover:-translate-y-[100%] transition-all duration-500">
         <img src={dish.bg} alt="img" srcset="" className="h-full w-full object-cover" />
     <div className="absolute bottom-0 w-full py-2 text-center bg-black/50  duration-1000">

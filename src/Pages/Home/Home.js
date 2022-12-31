@@ -1,5 +1,6 @@
 import React from 'react'
 import Food_Menu from '../../component/Home/Food_Menu'
+import Make_Resurvation from '../../component/Home/Make_Resurvation'
 import Offer from '../../component/Home/Offer'
 import Partner from '../../component/Home/Partner'
 import Banner from './Banner'
@@ -15,6 +16,7 @@ const Home = () => {
       < Offer />       
       <SpecialDish />
       <Partner />
+      <Make_Resurvation />
     </div>
   )
 }
