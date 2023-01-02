@@ -5,22 +5,22 @@ const Info = () => {
         {
             name : "Free Delivery",
             subTittle: "To Your Door",
-            icon: <i class="ri-truck-line ri-lg"></i>
+            icon: <i className="ri-truck-line ri-lg"></i>
         },
         {
             name : "Local Pickup",
             subTittle: "Check Out Location",
-            icon: <i class="ri-shopping-basket-2-line"></i>
+            icon: <i className="ri-shopping-basket-2-line"></i>
         },
         {
             name : "Available for You",
             subTittle: "Online Support 24/7",
-            icon: <i class="ri-customer-service-2-line"></i>
+            icon: <i className="ri-customer-service-2-line"></i>
         },
         {
             name : "Order on Google App",
             subTittle: "Download Our App",
-            icon: <i class="ri-smartphone-line"></i>
+            icon: <i className="ri-smartphone-line"></i>
         },
     ]
   return ( <div className='mt-5'>
