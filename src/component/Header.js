@@ -5,10 +5,12 @@ import { BsSuitHeartFill } from 'react-icons/bs';
 import { HiShoppingCart } from 'react-icons/hi';
 import { FiMenu } from 'react-icons/fi';
 import { AiOutlineClose } from 'react-icons/ai';
+import CartModal from './CartModal';
 
 
 const Header = () => {
-  const [open, setOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   
   const links = [
     {
@@ -43,14 +45,15 @@ const Header = () => {
 
 
 
+
   return (<div>
       <div className='flex shadow-md py-3 px-5 lg:px-12 items-center justify-between'>
         <div className=''>
           <a 
-          className='text-2xl flex items-center text-primary font-bold cursor-pointer'
+          className=' text-lg md:text-2xl md:flex items-center text-primary font-bold cursor-pointer'
           href="/home"
           alt=""
-          ><img src="https://i.ibb.co/M1qmGCN/logo.jpg" alt="" srcset="" className="w-14 h-14 mr-3 rounded-lg" /> FoodFact</a>   
+          ><img src="https://i.ibb.co/M1qmGCN/logo.jpg" alt="" srcset="" className="w-10 ml-3 md:ml-0 h-10 md:w-14 md:h-14 mr-3 rounded-lg" /> FoodFact</a>   
               
         </div>
         <div className='lg:flex ml-auto w-3/4 justify-between items-center hidden '>
@@ -70,7 +73,7 @@ const Header = () => {
               </li>)
             }
           </ul>
-          <div className='gap-5 flex text-black items-center'>
+          {<div className='gap-5 flex text-black items-center'>
           <div className="form-control">
         <label className="input-group input-group-sm items-center">
       <input type="text" placeholder="Type here" className="input input-bordered input-sm" />
@@ -80,9 +83,13 @@ const Header = () => {
       </label>
       </div>
       < BsSuitHeartFill className='w-8 h-8 p-2 bg-slate-200 rounded-full'  /> 
-      < HiShoppingCart className='w-8 h-8 p-2 bg-slate-200 rounded-full' /> 
+      <label htmlFor="cartModal" >
+      < HiShoppingCart onClick={()=>setCartOpen(!cartOpen)} htmlFor="cartModal" className='w-8 h-8 p-2 bg-slate-200 rounded-full cursor-pointer' />      
+      </label>
+       
+        </div>}
         </div>
-        </div>
+        <div></div>
         {
          open ? < FiMenu className='lg:hidden text-2xl' onClick={()=>(setOpen(!open))} /> 
          :
@@ -124,7 +131,7 @@ const Header = () => {
             < BsSuitHeartFill className='w-8 mx-auto h-8 p-2 mb-3 bg-slate-200 rounded-full '  /> 
             </li>  
             <li className='py-2 text-black'>
-          < HiShoppingCart className='w-8 h-8 p-2 mb-3 mx-auto bg-slate-200 rounded-full' /> 
+          < HiShoppingCart onClick={()=>setCartOpen(!cartOpen)} htmlFor="cartModal" className='w-8 h-8 p-2 mb-3 mx-auto bg-slate-200 rounded-full cursor-pointer' /> 
         </li> 
             <li className='mb-3 text-black'>
             <label className="input-group px-4 input-group-sm items-center">
@@ -134,9 +141,10 @@ const Header = () => {
         </span> 
       </label>
             </li>
-                                                   
           </ul>          
         </div>
+
+        {cartOpen && <CartModal cartOpen={cartOpen} setCartOpen={setCartOpen} />}
  
   </div>
   
