@@ -5,12 +5,12 @@ import Routers from '../Routers/Routers'
 
 const Layout = () => {
   return (
-    <div>
+    <div className="pb-[270px] md:pb-52 ">
         <Header />
         <div>
         <Routers  /> 
         </div>
-        <Footer/>    
+        <Footer className="fixed bottom-0"/>    
     </div>
   )
 }

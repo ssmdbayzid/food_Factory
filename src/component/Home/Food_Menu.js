@@ -1,5 +1,5 @@
 import React from 'react'
-import {GiHamburger, GiFullPizza, GiRoundStar} from "react-icons/gi"
+import {GiHamburger, GiFullPizza, } from "react-icons/gi"
 import {BiDrink} from "react-icons/bi"
 import {HiOutlineCake} from "react-icons/hi"
 import {SlCup} from "react-icons/sl"
@@ -9,8 +9,8 @@ import {CiIceCream} from "react-icons/ci"
 const Food_Menu = () => {
     const items = [
         {
-          name: "Testy Burger",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima.",
+          name: "Testy ytyBurger",
+          description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, repudiandae optio fugiat unde omnis tempore adipisci doloribus eveniet alias sapiente vero sunt eum neque consequuntur laboriosam quidem ullam mollitia temporibus!",
           icon: < GiHamburger />,
           img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80",
           price: 10,
@@ -25,14 +25,14 @@ const Food_Menu = () => {
         },
         {
           name: "Cold Ice-Cream",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima.",
+          description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos necessitatibus voluptas dicta eaque explicabo veritatis sunt alias exercitationem voluptatem suscipit.",
           icon: < CiIceCream />,
           img: "https://images.unsplash.com/photo-1633933358116-a27b902fad35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
           price: 16
         },
         {
           name: "BiDrink",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima.",
+          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia delectus doloribus excepturi numquam? Excepturi modi velit necessitatibus harum suscipit dicta aliquid est porro soluta explicabo nulla expedita asperiores numquam fugiat nam quia amet rem consectetur nostrum mollitia consequatur, eius totam.",
           icon: < BiDrink />,
           img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=472&q=80",
           price: 20
@@ -64,20 +64,22 @@ const Food_Menu = () => {
       <h1 className="text-3xl text-primary font-bold text-center my-8">Food Menu</h1>
       <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
     {
-      items && items.map((item, index)=><div key={index} className="card  bg-base-100 shadow">
+      items && items.map((item, index)=><div key={index} className="card pb-12  bg-base-100 shadow">
       <figure><img src={item.img} alt="Shoes" className="h-48  w-full" /></figure>
-      <div className=" pt-5 ">
+      <div className="pt-5">
       <div className="flex px-5 justify-between">
     <h2 className="text-xl font-bold text-primary">{item.name}</h2>
     <p className="text-lg font-semibold text text-primary">${item.price}</p>    
     </div>
       {input}
-     <p className="px-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p> 
+     <p className="px-5">{item.description}</p> 
+     <br />
 
-      <div className="flex justify-center items-center gap-5 px-5 bg-primary/30 py-1 hover:bg-primary/50 rounded mt-5 cursor-pointer">
+      <div className="absolute bottom-0 w-full flex rounded-b-xl justify-center items-center gap-5 px-5 bg-primary/30 py-1 hover:bg-primary/50 mt-5 cursor-pointer">
     <i className="ri-add-box-fill text-3xl cursor-pointer text-red-600"></i>
     <span className="text-xl font-bold">Added To Cart</span> 
     </div>
+
     </div>
     </div>)}
 </div >
