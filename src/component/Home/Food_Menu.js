@@ -4,81 +4,146 @@ import {BiDrink} from "react-icons/bi"
 import {HiOutlineCake} from "react-icons/hi"
 import {SlCup} from "react-icons/sl"
 import {CiIceCream} from "react-icons/ci"
+import { NavLink } from 'react-router-dom'
 
 
 const Food_Menu = () => {
     const items = [
-        {
-          name: "Testy ytyBurger",
-          description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit, repudiandae optio fugiat unde omnis tempore adipisci doloribus eveniet alias sapiente vero sunt eum neque consequuntur laboriosam quidem ullam mollitia temporibus!",
+        { 
+          id: 101,
+          name: "Chicken Tikka Masala",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",        
           icon: < GiHamburger />,
-          img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=699&q=80",
+          img: "https://i.ibb.co/Rv3N43Z/c1.png",
           price: 10,
-          
+          catagory: "chicken",                   
         },
-        {
-          name: "Testy Pizza",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima.",
+        { 
+          id: 102,
+          name: "Chicken Vindalo",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
           icon: < GiFullPizza />,
-          img: "https://images.unsplash.com/photo-1590947132387-155cc02f3212?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-          price: 12
+          img: "https://i.ibb.co/56D9L3v/c2.png",
+          price: 12,
+          catagory: "chicken",
         },
-        {
-          name: "Cold Ice-Cream",
-          description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dignissimos necessitatibus voluptas dicta eaque explicabo veritatis sunt alias exercitationem voluptatem suscipit.",
+        { 
+          id: 103,
+          name: "Chicken Kurma",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
           icon: < CiIceCream />,
-          img: "https://images.unsplash.com/photo-1633933358116-a27b902fad35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
-          price: 16
+          img: "https://i.ibb.co/vHhRwHr/c3.png",
+          price: 16,
+          catagory: "chicken",
         },
-        {
-          name: "BiDrink",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia delectus doloribus excepturi numquam? Excepturi modi velit necessitatibus harum suscipit dicta aliquid est porro soluta explicabo nulla expedita asperiores numquam fugiat nam quia amet rem consectetur nostrum mollitia consequatur, eius totam.",
+        { 
+          id: 104,
+          name: "Achari Chicken",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
           icon: < BiDrink />,
-          img: "https://images.unsplash.com/photo-1497534446932-c925b458314e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=472&q=80",
-          price: 20
+          img: "https://i.ibb.co/Kzk4FCp/c4.png",
+          price: 20,
+          catagory: "chicken",
         },
-        {
-          name: "Testy Sweet",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima.",
+        { 
+          id: 105,
+          name: "Chicken Masala",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
           icon: < HiOutlineCake />,
-          img: "https://images.unsplash.com/photo-1573750217191-d8e5c5f61f98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-          price: 22
+          img: "https://i.ibb.co/zb0pGLh/c6.png",
+          price: 22,
+          catagory: "chicken",
         },
-        {
-          name: "Healthy Breakfast",
-          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum veniam ratione minima",
+        { 
+          id: 106,
+          name: "Chicken Manchurin",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
           icon: <SlCup />,
-          img: "https://images.unsplash.com/photo-1531969179221-3946e6b5a5e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
-          price: 25
+          img: "https://i.ibb.co/HTfTr9x/c7.png",
+          price: 25,
+          catagory: "chicken",
+        },
+        { 
+          id: 107,
+          name: "Chicken Cannelloni",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/cxf6Xj0/cu1.png",
+          price: 25,
+          catagory: "chicken Churry",
+        },
+        { 
+          id: 108,
+          name: "Chicken Chickpea",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/5xV0BzB/cu2.png",
+          price: 25,
+          catagory: "chicken Churry",
+        },
+        { 
+          id: 109,
+          name: "BUtter Chicken",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/0CW8Wfq/cu3.png",
+          price: 25,
+          catagory: "chicken Churry",
+        },
+        { 
+          id: 110,
+          name: "Chicken Pasta",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/4tzcDsG/cu4.png",
+          price: 25,
+          catagory: "chicken Churry",
+        },
+        { 
+          id: 111,
+          name: "Crunch Chicken",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/vJhGy2z/cu5.png",
+          price: 25,
+          catagory: "chicken Churry",
+        },
+        { 
+          id: 112,
+          name: "Portugese Chicken",
+          description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, itaque. Explicabo sit ipsa quibusdam eius.",
+          icon: <SlCup />,
+          img: "https://i.ibb.co/4ZM6Sc1/cu6.png",
+          price: 25,
+          catagory: "chicken Churry",
         },
       ]
 
-      const input = <div className="rating rating-xs px-5">
-                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" checked />
-                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+      const input = <div className="rating rating-xs px-5 mb-8">
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-primary" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-primary" checked />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-primary" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-primary" />
+                    <input type="radio" name="rating-7" className="mask mask-star-2 bg-primary" />
                     </div>
   return (<div>
-      <h1 className="text-3xl text-primary font-bold text-center my-8">Food Menu</h1>
+      <h1 className="text-3xl text-primary font-bold text-center my-8">Our Product</h1>
       <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
     {
-      items && items.map((item, index)=><div key={index} className="card pb-12  bg-base-100 shadow">
-      <figure><img src={item.img} alt="Shoes" className="h-48  w-full" /></figure>
+      items && items.map((item, index)=><div key={index} className="card pt-6 pb-10 px-6  bg-base-100 shadow text-center">
+      <figure><img src={item.img} alt="menu" className="h-52  w-full" /></figure>
       <div className="pt-5">
-      <div className="flex px-5 justify-between">
-    <h2 className="text-xl font-bold text-primary">{item.name}</h2>
-    <p className="text-lg font-semibold text text-primary">${item.price}</p>    
-    </div>
+    <h2 className="text-xl font-bold text-secondary">{item.name}</h2>    
+
+    <p className="text-lg font-semibold text text-secondary">Price: ${item.price}</p>
       {input}
-     <p className="px-5">{item.description}</p> 
+     {/* <p className="px-5 text-justify">{item.description}</p>  */}
      <br />
 
-      <div className="absolute bottom-0 w-full flex rounded-b-xl justify-center items-center gap-5 px-5 bg-primary/30 py-1 hover:bg-primary/50 mt-5 cursor-pointer">
-    <i className="ri-add-box-fill text-3xl cursor-pointer text-red-600"></i>
-    <span className="text-xl font-bold">Added To Cart</span> 
-    </div>
+      <NavLink to={`/purchase/${item.id}`} className=" mx-auto  gap-5 px-5 border-2 border-secondary py-2 hover:bg-primary mt-5 cursor-pointer "      
+      >
+      <span className="text-xl font-semibold hover:text-white text-secondary">Order Now</span> 
+    </NavLink>
 
     </div>
     </div>)}

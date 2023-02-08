@@ -3,7 +3,7 @@ import { Purchase, Order, Dashboard } from "../Pages";
  const privateRoute = [
     {
         name: "Purchase",
-        path: "/purchase",
+        path: "/purchase/:id",
         component: Purchase,
     },
     {

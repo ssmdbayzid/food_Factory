@@ -3,6 +3,7 @@ import Food_Menu from '../../component/Home/Food_Menu'
 import Make_Resurvation from '../../component/Home/Make_Resurvation'
 import Offer from '../../component/Home/Offer'
 import Partner from '../../component/Home/Partner'
+import Review from '../Review/Review'
 import Banner from './Banner'
 import Info from './Info'
 import SpecialDish from './SpecialDish'
@@ -16,6 +17,7 @@ const Home = () => {
       < Offer />       
       <SpecialDish />
       <Partner />
+      <Review />
       <Make_Resurvation />
     </div>
   )
