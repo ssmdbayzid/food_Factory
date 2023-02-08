@@ -67,7 +67,7 @@ const SpecialDish = () => {
       <span className="text-md font-semibold hover:text-white text-secondary">See More</span> 
     </NavLink>     
     </div>
-</div>)}     
+    </div>)}     
     </div>
     </div>)
 }
