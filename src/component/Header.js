@@ -10,7 +10,7 @@ import CartModal from './CartModal';
 
 const Header = () => {
   const [cartOpen, setCartOpen] = useState(false)
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   
   const links = [
     {
@@ -91,46 +91,48 @@ const Header = () => {
         </div>
         <div></div>
         {
-         open ? < FiMenu className='lg:hidden text-2xl' onClick={()=>(setOpen(!open))} /> 
-         :
-        
-         < AiOutlineClose className='lg:hidden text-2xl' onClick={()=>(setOpen(!open))} /> 
-        
+          open ? 
+          < AiOutlineClose className='lg:hidden text-2xl' onClick={()=>(setOpen(!open))} />          
+         :        
+         < FiMenu className='lg:hidden text-2xl' onClick={()=>(setOpen(!open))} />         
         }
 
   </div>
 
   {/*//*  Responsibe Navigation bar */}
 
+  {/* translate-y-[100%] group-hover:translate-y-0 transition-all duration-500 bg-white
+   */}
 
-    <div className={`absolute h-screen top-14 bg-slate-600 md:-right-[600px] ${open ? "-right-[550px]" : "right-0"} w-full mx-auto z-20 pb-8 transition-all duration-500 ease-in justify-between text-white items-center lg:hidden `}>
+
+    <div className={`absolute h-screen top-22 bg-slate-600 md:-right-[600px] ${open ? "translate-x-0" : "translate-x-[100%]"} w-full mx-auto z-20 pb-8 transition-all duration-500  ease-in justify-between text-white items-center lg:hidden `}>
           <ul className=' '>
-            <li className='mt-3 text-center border-b-2'>
+            <li className='mt-3 pb-4 text-center  border-b-2'>
             <Link to="/home" className='hover:text-primary duration-200 font-semibold '>Home</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/shop" className='hover:text-primary duration-200 font-semibold'>Shop</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/order" className='hover:text-primary duration-200 font-semibold'>My Order</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/contact" className='hover:text-primary duration-200 font-semibold'>Contact</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/dashboard" className='hover:text-primary duration-200 font-semibold'>Dashboard</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/sign-in" className='hover:text-primary duration-200 font-semibold'>Sign In</Link>
             </li>
-            <li className='py-2 border-b-2 text-center'>
+            <li className='mt-4 pb-4 border-b-2 text-center'>
             <Link to="/sign-up" className='hover:text-primary duration-200 font-semibold'>Sign Up</Link>
             </li>
             <br />
-            <li className='py-2 text-black'>
+            <li className='mt-4 pb-4 text-black'>
             < BsSuitHeartFill className='w-8 mx-auto h-8 p-2 mb-3 bg-slate-200 rounded-full '  /> 
             </li>  
-            <li className='py-2 text-black'>
+            <li className='mt-4 pb-4 text-black'>
           < HiShoppingCart onClick={()=>setCartOpen(!cartOpen)} htmlFor="cartModal" className='w-8 h-8 p-2 mb-3 mx-auto bg-slate-200 rounded-full cursor-pointer' /> 
         </li> 
             <li className='mb-3 text-black'>
