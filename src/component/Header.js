@@ -53,12 +53,12 @@ const Header = () => {
           className=' text-lg md:text-2xl md:flex items-center text-primary font-bold cursor-pointer'
           href="/home"
           alt=""
-          ><img src="https://i.ibb.co/M1qmGCN/logo.jpg" alt="" srcset="" className="w-10 ml-3 md:ml-0 h-10 md:w-14 md:h-14 mr-3 rounded-lg" /> FoodFact</a>   
+          ><img src="https://i.ibb.co/M1qmGCN/logo.jpg" alt="" srcSet="" className="w-10 ml-3 md:ml-0 h-10 md:w-14 md:h-14 mr-3 rounded-lg" /> FoodFact</a>   
               
         </div>
         <div className='lg:flex ml-auto w-3/4 justify-between items-center hidden '>
           <ul className='flex gap-5'>
-            {/* <Link to="/home" className='hover:text-primary duration-200 font-semibold'>Home</Link>
+            {/* <Link to="/home" className="hover:text-primary duration-200 font-semibold">Home</Link>
             <Link to="/shop" className='hover:text-primary duration-200 font-semibold'>Shop</Link>
             <Link to="/order" className='hover:text-primary duration-200 font-semibold'>My Order</Link>
             <Link to="/contact" className='hover:text-primary duration-200 font-semibold'>Contact</Link>
@@ -66,11 +66,10 @@ const Header = () => {
             <Link to="/sign-in" className='hover:text-primary duration-200 font-semibold'>Sign In</Link>
             <Link to="/sign-up" className='hover:text-primary duration-200 font-semibold'>Sign Up</Link> */}
             {
-              links.map((link, index)=><li>
+              links.map((link, index)=>
                 <NavLink 
-                key={index} to={link.path}>{link.name}
-                </NavLink>
-              </li>)
+                key={index} to={link.path} className="hover:text-primary duration-200 ">{link.name}        
+                </NavLink>)
             }
           </ul>
           {<div className='gap-5 flex text-black items-center'>

@@ -50,7 +50,7 @@ const Review = () => {
       CustReviews &&  CustReviews.map((review, index) => 
 
     <div key={index} className="  text-center md:px-6 px-4 py-8 shadow">
-      {/* <img src={review.img} alt="" srcset="" className="w-24 h-24 rounded-full mx-auto" /> */}
+      {/* <img src={review.img} alt="" srcSet="" className="w-24 h-24 rounded-full mx-auto" /> */}
 
       <div className="avatar">
         <div className="w-28 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">

@@ -14,8 +14,7 @@ const Banner = () => {
     <img src="https://elementor.zozothemes.com/restaurt/wp-content/uploads/sites/58/2022/11/chicken-grill2.png" className=" rounded-md w-[350px]" alt='' />
     </div>
   </div>
-</div>
-    
+</div>    
     )
   }
   

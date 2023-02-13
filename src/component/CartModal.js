@@ -42,7 +42,7 @@ const CartModal = ({cartOpen, setCartOpen}) => {
             {
                 items && items.map((item, index)=><div key={index}>
                     <div className="flex mt-10 mb-5">
-                    <img src={item.img} alt="" srcset="" className="h-16 w-16 mr-8 items-center rounded-md"/>
+                    <img src={item.img} alt="" srcSet="" className="h-16 w-16 mr-8 items-center rounded-md"/>
                     <div>
                         <p className="font-semibold text-xl">{item.name}</p>
                         <h1 className="text-xl font-bold">${item.price}</h1>

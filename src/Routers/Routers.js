@@ -22,9 +22,9 @@ const Routers = () => {
     {/*---------------- Private Route --------------*/}
 
     {
-      privateRoute.map((route, index)=>{
+      privateRoute.map((route, index)=>
         <Route key={index} path={route.path} element={<route.component />}></Route>
-      })
+      )
     }
 
 
