@@ -3,17 +3,35 @@ import React, { useEffect, useState } from 'react'
 
 
 import { NavLink } from 'react-router-dom';
+import { useProductsQuery } from '../../api/productAPI.ts';
+// import { useGetProductsQuery } from '../../api/productAPI';
 
 
 
 const Food_Menu = () => {
-  const [products, setProducts ] = useState([]);
+  // const [products, setProducts ] = useState([]);
 
-  useEffect(()=>{
-    axios.get("http://localhost:5000/products").then(data=>{
-      setProducts(data.data.product)
-    })
-  }, [products])
+  const { data, error, isLoading, isSuccess } = useProductsQuery();
+
+
+  
+  if(isLoading){
+    return <p>Loading ......</p>
+  } else if(isSuccess){
+    console.log(data);
+  }
+
+  if(error){
+    console.log(error);
+    return <p className="text-red-600">{error.status}</p>
+  }
+
+  // useEffect(()=>{
+  //   axios.get("http://localhost:5000/products").then(data=>{
+  //     setProducts(data.data.product)
+  //   })
+  // }, [products])
+
 
 
 
@@ -115,10 +133,14 @@ const Food_Menu = () => {
                     </div>
 
   return (<div>
+    {isLoading && <p>Loading ......</p>}
+    {error && <p className="text-red-600 text-center text-3xl">{error.status}</p>}
+    
+    {isSuccess && <div>
       <h1 className="text-3xl font-bold text-center my-8">Our <span className="text-primary text-3xl">Product</span></h1>
       <div className="mx-5 md:mx-8 lg:mx-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
     {
-      products && products.map((product, index)=><div key={index} className="card pt-6 pb-10 px-6  bg-base-100 shadow text-center">
+      data && data.product.map((product, index)=><div key={index} className="card pt-6 pb-10 px-6  bg-base-100 shadow text-center">
       <figure><img src={product.img} alt="menu" className="h-52  w-full" /></figure>
       <div className="pt-5">
     <h2 className="text-xl font-bold text-secondary">{product.name}</h2>    
@@ -141,7 +163,9 @@ const Food_Menu = () => {
     </div>
     </div>)}
 </div >
-</div >
+</div > }
+</div>
+
 )}
 
 export default Food_Menu;

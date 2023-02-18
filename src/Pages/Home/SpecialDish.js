@@ -51,7 +51,7 @@ const SpecialDish = () => {
    {
     dishes && dishes.map((dish, index)=><div key={index} className="group h-60 w-full md:mx-3 relative items-center justify-center overflow-hidden cursor-pointer shadow-lg bottom-1 border-2 border-primary">
     <div  className="h-full w-full group-hover:-translate-y-[100%] transition-all duration-500">
-        <img src={dish.bg} alt="img" srcset="" className="h-full w-full object-cover" />
+        <img src={dish.bg} alt="img" srcSet="" className="h-full w-full object-cover" />
     <div className="absolute bottom-0 w-full py-2 text-center bg-black/50  duration-1000">
       <h1 className="text-center text-2xl text-white">{dish.name}</h1>
     </div>

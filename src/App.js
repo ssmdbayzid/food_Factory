@@ -5,8 +5,7 @@ import 'remixicon/fonts/remixicon.css'
 
 function App() {
   return (
-    <div>
-      
+    <div>      
       <Layout />
     </div>
   );
