@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 
 import { NavLink } from 'react-router-dom';
 import { useProductsQuery } from '../../api/productAPI.ts';
+import Button from '../share/Button';
 // import { useGetProductsQuery } from '../../api/productAPI';
 
 
@@ -150,8 +151,13 @@ const Food_Menu = () => {
      {/* <p className="px-5 text-justify">{item.description}</p>  */}
      <br />
 
-      <NavLink to={`/purchase/${product._id}`} className=" mx-auto group gap-5 px-5 border-2 border-secondary py-2 hover:bg-primary mt-5 cursor-pointer ">
-      <span className="text-xl font-semibold group-hover:text-white text-secondary">Order Now</span> 
+      {/* <NavLink to={`/purchase/${product._id}`} className=" mx-auto group gap-5 px-5 border-2 border-secondary py-2 hover:bg-primary mt-5 cursor-pointer "> */}
+      {/* <span className="text-xl font-semibold group-hover:text-white text-secondary">Order Now</span>  */}
+
+      <NavLink to={`/purchase/${product._id}`} className="">
+      <Button>
+        Order Now
+      </Button>
     </NavLink>
 {/* 
       <span onClick={()=>handleAddMenu(product)}   to={`/purchase/${product.id}`} className=" mx-auto  gap-5 px-5 border-2 border-secondary py-2 hover:bg-primary mt-5 cursor-pointer " 
