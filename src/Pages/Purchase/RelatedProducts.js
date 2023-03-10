@@ -57,8 +57,9 @@ let relatedProducts;
 //         </div>
 
 
-const handleAddToCart = (product) =>{
-  dispatch(addToCart(product))
+const handleAddToCart = (item) =>{
+  dispatch(addToCart(item))
+  console.log(item)
 }
   return (<div className="px-5">
       {isLoading && isLoading}
@@ -70,20 +71,21 @@ const handleAddToCart = (product) =>{
      itemClass="carousel-item-padding-80-px"
      className="mb-5"
       >      
-    {relatedProducts && relatedProducts.map((product, index)=>
+    {relatedProducts && relatedProducts.map((item, index)=>
   <div key={index} className="group max-w-sm mx-3 text-secondary border  rounded-lg shadow border-gray-700 h-full pb-8">
-    <figure className="h-40 md:h-48 mt-8">< img className="mx-auto group-hover:w-36 w-32 md:group-hover:w-40  duration-500 md:w-36 " src={product.img} alt="product image" /></figure>
+    <figure className="h-40 md:h-48 mt-8">< img className="mx-auto group-hover:w-36 w-32 md:group-hover:w-40  duration-500 md:w-36 " src={item.img} alt="product image" /></figure>
     <div className="px-5 pb-8">
-            <h5 className="text-md font-semibold tracking-tight text-gray-900 text-justify">{product.description}</h5>
+            <h5 className="text-xl font-semibold tracking-tight text-gray-900 text-justify">{item.name}</h5>
+            <h5 className=" tracking-tight text-gray-900 text-justify">{item.description}</h5>
         {rating}
-            <p className="text-xl">Price &nbsp; : <span className=" text-primary pb-3">${product.price}</span></p>         
+            <p className="text-xl">Price &nbsp; : <span className=" text-primary pb-3">${item.price}</span></p>         
             {/* <NavLink to={`/purchase/${product._id}`} className=""> */}
             <NavLink to={`/purchase/63e923afffc07097ee3a59d3`} className="absolute bottom-3 ">
-      <Button className=""
-      onClick={()=> handleAddToCart(product)}
+      <button className="btn text-white w-full mt-6 bg-gradient-to-r from-primary/80 via-secondary/50 to-primary/90"
+      onClick={()=> handleAddToCart(item)}
       >
         Add To Cart
-      </Button>
+      </button>
     </NavLink>      
     </div>
 </div>)}

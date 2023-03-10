@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../store/features/cartSlice';
 
 
+
 const Purchase = () => {  
   const {id} = useParams() 
   // const [product, setProduct] = useState({})
@@ -34,6 +35,7 @@ const dispatch = useDispatch()
 const handleAddToCart = (product) =>{
   dispatch(addToCart(product))
   // console.log("this is from purchase page")
+  
 }
 
 
