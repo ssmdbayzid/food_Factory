@@ -7,7 +7,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import rating from '../../component/share';
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../store/slices/cartSlice';
+import { addToCart } from '../../store/features/cartSlice';
 
 
 const Related = ({product}) => {
@@ -19,7 +19,7 @@ let relatedProducts;
   
   if(isLoading){
     return <p>Loading ......</p>
-  } else if(isSuccess){
+  } else if (isSuccess){
     const catagory = data.product.filter((p)=> p.catagory === product.catagory);
     relatedProducts = catagory.filter((p)=> p._id !== product._id)
   }
