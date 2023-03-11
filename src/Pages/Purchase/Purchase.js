@@ -1,6 +1,6 @@
 
 
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useProductQuery } from '../../api/productAPI.ts';
 import RelatedProducts from './RelatedProducts';
 import rating from '../../component/share';
@@ -13,7 +13,7 @@ const Purchase = () => {
   const {id} = useParams() 
   // const [product, setProduct] = useState({})
 const dispatch = useDispatch()
-
+const navigate = useNavigate()
   
   const {data, error, isLoading, isSuccess} = useProductQuery(id)
 
@@ -35,6 +35,7 @@ const dispatch = useDispatch()
 const handleAddToCart = (product) =>{
   dispatch(addToCart(product))
   // console.log("this is from purchase page")
+  navigate("/order")
   
 }
 
