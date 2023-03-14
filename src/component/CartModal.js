@@ -46,11 +46,13 @@ const CartModal = ({cartOpen, setCartOpen}) => {
             }
         </div>
         <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-        <Button
+        
+        <button
         onClick={()=>navigate("/order")}
-        >
-          Check Out Page
-        </Button>
+        className="btn text-white w-full mt-6 bg-gradient-to-r from-primary/80 via-secondary/50 to-primary/90">Check Out Page</button>
+        
+
+
         </div>
   </div>
   )

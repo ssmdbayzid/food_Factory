@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decreaseCart, increaseCart, removeCartItem, resetCartItem } from '../../store/features/cartSlice'
+import { decreaseCart, getTotals, increaseCart, removeCartItem, resetCartItem } from '../../store/features/cartSlice'
 import {FiPlus, FiMinus} from 'react-icons/fi'
 
 const Order = () => {
-
-  const dispatch = useDispatch()
-  const carts = useSelector((state)=> state.cart.cartItems)
   
-
+  const dispatch = useDispatch()
+  const carts = useSelector((state)=> state.cart.cartItems);
+  const cart2 = useSelector((state)=> state.cart);
+  
+  // useEffect(()=>{
+  //   dispatch(getTotals())
+  // },[cart2, dispatch])
+  
+  
   // Increase Cart Quantity
   const increaseOrderQty = (item) => {
     dispatch(increaseCart(item))           
   }
-
+  
   // Decrease Cart Quantity
   const decreaseOrderQty = (item) => {
     dispatch(decreaseCart(item))           
@@ -24,12 +29,15 @@ const Order = () => {
   }
   
   const resetCart = () =>{
-      dispatch(resetCartItem())
+    dispatch(resetCartItem())
   }
   
   return (
     <div>
-     <div className="container mx-auto mt-10">
+      { carts.length === 0 ? <div>
+          <h1 className="font-semibold text-xl text-center my-12" >Your Cart is currently empty</h1>
+        </div> :
+     carts.map((item, index) =><div key={index} className="container mx-auto mt-10">
     {/* <div className="flex shadow-md my-10"> */}
       <div className="w-full bg-white mx-auto px-10 py-10">
         <div className="flex justify-between border-b pb-8">
@@ -42,12 +50,9 @@ const Order = () => {
           <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Price</h3>
           <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
         </div>
-        { carts.length === 0 ? <div>
-          <h1 className="font-semibold text-xl text-center my-12" >Your Cart is currently empty</h1>
-
-        </div> :
-          carts.map((item, index) =><div
-          key={index}
+        
+          <div
+          
           className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
           <div className="flex w-2/5"> 
             <div className="w-20">
@@ -71,7 +76,7 @@ const Order = () => {
           </div>
           <span className="text-center w-1/5 font-semibold text-sm">${item.price}</span>
           <span className="text-center w-1/5 font-semibold text-sm">${item.price * item.cartQuantity}</span>
-        </div>)}
+        </div>
      
       </div>
       <div className="md:flex px-10 justify-between ">
@@ -85,7 +90,7 @@ const Order = () => {
         <div className="border-t mt-8">
           <div className="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Sub-total</span>
-            <span>$600</span>
+            <span>$200</span>
           </div>
           <p>Taxes and shipping calculated at checkout</p>
           <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
@@ -93,8 +98,8 @@ const Order = () => {
       </div>
       </div>
 
-    </div>
-  {/* </div> */}
+    </div>)}
+      
     </div>
   )
 }

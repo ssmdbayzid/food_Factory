@@ -128,20 +128,11 @@ const Header = () => {
             <Link to="/sign-up" className='hover:text-primary duration-200 font-semibold'>Sign Up</Link>
             </li>
             <br />
-            <li className='mt-4 pb-4 text-black'>
-            < BsSuitHeartFill className='w-8 mx-auto h-8 p-2 mb-3 bg-slate-200 rounded-full '  /> 
-            </li>  
+          
             <li className='mt-4 pb-4 text-black'>
           < HiShoppingCart onClick={()=>setCartOpen(!cartOpen)} htmlFor="cartModal" className='w-8 h-8 p-2 mb-3 mx-auto bg-slate-200 rounded-full cursor-pointer' /> 
         </li> 
-            <li className='mb-3 text-black'>
-            <label className="input-group px-4 input-group-sm items-center">
-      <input type="text" placeholder="Type here" className="input input-bordered h-10 w-full" />
-        <span className='h-10 '> 
-        < BiSearchAlt  className='w-5 h-5' />
-        </span> 
-      </label>
-            </li>
+            
           </ul>          
         </div>
 
