@@ -34,8 +34,9 @@ const navigate = useNavigate()
 
 const handleAddToCart = (product) =>{
   dispatch(addToCart(product))
-  // console.log("this is from purchase page")
   navigate("/order")
+  console.log("from add to cart")
+
   
 }
 

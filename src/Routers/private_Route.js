@@ -1,4 +1,4 @@
-import { Purchase, Order, Dashboard } from "../Pages";
+import { Purchase, Order, Checkout, Dashboard } from "../Pages";
 
  const privateRoute = [
     {
@@ -10,6 +10,11 @@ import { Purchase, Order, Dashboard } from "../Pages";
         name: "Order",
         path: "/order",
         component: Order,
+    },
+    {
+        name: "Checkout",
+        path: "/checkout",
+        component: Checkout,
     },
     {
         name: "Dashboard",

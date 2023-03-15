@@ -1,22 +1,25 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decreaseCart, getTotals, increaseCart, removeCartItem, resetCartItem } from '../../store/features/cartSlice'
+import { decreaseCart, getTotals, addToCart, removeCartItem, resetCartItem } from '../../store/features/cartSlice'
 import {FiPlus, FiMinus} from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
 
 const Order = () => {
   
   const dispatch = useDispatch()
-  const carts = useSelector((state)=> state.cart.cartItems);
-  const cart2 = useSelector((state)=> state.cart);
-  
-  // useEffect(()=>{
-  //   dispatch(getTotals())
-  // },[cart2, dispatch])
+  const cart = useSelector((state)=> state.cart);
+  // const cart2 = useSelector((state)=> state.cart);
+  const navigate = useNavigate()
+  useEffect(()=>{
+    dispatch(getTotals())
+  },[cart, dispatch])
   
   
   // Increase Cart Quantity
   const increaseOrderQty = (item) => {
-    dispatch(increaseCart(item))           
+    dispatch(addToCart(item));
+
+           
   }
   
   // Decrease Cart Quantity
@@ -34,15 +37,15 @@ const Order = () => {
   
   return (
     <div>
-      { carts.length === 0 ? <div>
+      { cart.cartItems.length === 0 ? <div>
           <h1 className="font-semibold text-xl text-center my-12" >Your Cart is currently empty</h1>
         </div> :
-     carts.map((item, index) =><div key={index} className="container mx-auto mt-10">
+     <div className="container mx-auto mt-10">
     {/* <div className="flex shadow-md my-10"> */}
       <div className="w-full bg-white mx-auto px-10 py-10">
         <div className="flex justify-between border-b pb-8">
           <h1 className="font-semibold text-2xl">Shopping Cart</h1>
-          <h2 className="font-semibold text-2xl">{carts ? carts.length : 0} Items</h2>
+          <h2 className="font-semibold text-2xl">{cart.cartItems.length} Items</h2>
         </div>
          <div className="flex mt-10 mb-5">
           <h3 className="font-semibold text-gray-600 text-xs uppercase w-2/5">Product Details</h3>
@@ -51,8 +54,8 @@ const Order = () => {
           <h3 className="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Total</h3>
         </div>
         
-          <div
-          
+        {cart.cartItems.map((item, index)=><div  
+        key={index}  
           className="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
           <div className="flex w-2/5"> 
             <div className="w-20">
@@ -76,7 +79,7 @@ const Order = () => {
           </div>
           <span className="text-center w-1/5 font-semibold text-sm">${item.price}</span>
           <span className="text-center w-1/5 font-semibold text-sm">${item.price * item.cartQuantity}</span>
-        </div>
+        </div>)}
      
       </div>
       <div className="md:flex px-10 justify-between ">
@@ -90,15 +93,17 @@ const Order = () => {
         <div className="border-t mt-8">
           <div className="flex font-semibold justify-between py-6 text-sm uppercase">
             <span>Sub-total</span>
-            <span>$200</span>
+            <span>${cart.cartTotalAmount}</span>
           </div>
           <p>Taxes and shipping calculated at checkout</p>
-          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+          <button
+          onClick={()=>navigate("/checkout")}
+          className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
         </div>
       </div>
       </div>
 
-    </div>)}
+    </div>}
       
     </div>
   )

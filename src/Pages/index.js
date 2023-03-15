@@ -10,6 +10,7 @@ export {default as Sign_Up} from "./Sign_Up/Sign_Up"
 
 export {default as Purchase} from "./Purchase/Purchase"
 export {default as Order} from "./Order/Order"
+export {default as Checkout} from "./Order/Checkout"
 export {default as Dashboard} from "./Dashboard/Dashboard"
 export {default as Review} from "./Review/Review"
 
