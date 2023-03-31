@@ -3,57 +3,84 @@ import { useSelector } from 'react-redux';
 
 const Checkout = () => {
   const cart = useSelector((state)=> state.cart);
+
+  const handleOrderSubmit = e=>{
+      e.preventDefault()      
+      const form = e.target;
+      const name = form.name.value;
+      const email = form.email.value;
+      const mobile = form.mobile.value;
+      const address = form.address.value;
+      const thana = form.thana.value;
+      const district = form.district.value;
+      
+      const newOrder = {
+        name,
+        email,
+        mobile,
+        address,
+        thana,
+        district
+      }
+    console.log(newOrder)
+  }
   
   return (  <div>
-     { (cart.cartItems.length > 0) && <div class=" mb-10 grid grid-cols-3">
-        <div class="lg:col-span-2 col-span-3 bg-indigo-50 pt-10 space-y-8 px-12">
-            <div class="mt-8 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
-                <div class="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
-                    <div class="text-yellow-500">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 sm:w-5 h-6 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+     { (cart.cartItems.length > 0) && <div className=" mb-10 grid grid-cols-3">
+        
+        <div className="lg:col-span-2 col-span-3 bg-indigo-50 pt-10 space-y-8 px-12">
+            <div className="mt-8 p-4 relative flex flex-col sm:flex-row sm:items-center bg-white shadow rounded-md">
+                <div className="flex flex-row items-center border-b sm:border-b-0 w-full sm:w-auto pb-4 sm:pb-0">
+                    <div className="text-yellow-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 sm:w-5 h-6 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <div class="text-sm font-medium ml-3">Checkout</div>
+                    <div className="text-sm font-medium ml-3">Checkout</div>
                 </div>
-                <div class="text-sm tracking-wide text-gray-500 mt-4 sm:mt-0 sm:ml-4">Complete your shipping and payment details below.</div>
-                <div class="absolute sm:relative sm:top-auto sm:right-auto ml-auto right-4 top-4 text-gray-400 hover:text-gray-800 cursor-pointer">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <div className="text-sm tracking-wide text-gray-500 mt-4 sm:mt-0 sm:ml-4">Complete your shipping and payment details below.</div>
+                <div className="absolute sm:relative sm:top-auto sm:right-auto ml-auto right-4 top-4 text-gray-400 hover:text-gray-800 cursor-pointer">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
                 </div>
             </div>
-            <div class="rounded-md">
-                <form id="payment-form" method="POST" action="">
-                    <section>
-                        <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Shipping & Billing Information</h2>
-                        <fieldset class="mb-3 bg-white shadow-lg rounded text-gray-600">
-                            <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span class="text-right px-2">Name</span>
-                                <input name="name" class="focus:outline-none px-3" placeholder="Try Odinsson" required="" />
+            <div className="rounded-md">
+                <form onSubmit={handleOrderSubmit} >
+                    
+                        <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Shipping & Billing Information</h2>
+                        <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
+                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                                <span className="text-right px-2">Name</span>
+                                <input name="name" className="focus:outline-none px-3" placeholder="Your Name" required />
                             </label>
-                            <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span class="text-right px-2">Email</span>
-                                <input name="email" type="email" class="focus:outline-none px-3" placeholder="try@example.com" required="" />
+                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                                <span className="text-right px-2">Email</span>
+                                <input name="email" type="email" className="focus:outline-none px-3" placeholder="Your Email" required />
                             </label>
-                            <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span class="text-right px-2">Address</span>
-                                <input name="address" class="focus:outline-none px-3" placeholder="10 Street XYZ 654" />
+                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                                <span className="text-right px-2">Mobile</span>
+                                <input name="mobile" type="text" className="focus:outline-none px-3" placeholder="Your Mobile" required />
                             </label>
-                            <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                                <span class="text-right px-2">City</span>
-                                <input name="city" class="focus:outline-none px-3" placeholder="San Francisco" />
+                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                                <span className="text-right px-2">Address</span>
+                                <input name="address"  required className="focus:outline-none px-3" placeholder="Delivery Address" />
                             </label>
-                            <label class="inline-flex w-2/4 border-gray-200 py-3">
-                                <span class="text-right px-2">State</span>
-                                <input name="state" class="focus:outline-none px-3" placeholder="CA" />
+                            <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                                <span className="text-right px-2">Thana</span>
+                                <input name="thana" required className="focus:outline-none px-3" placeholder="Thana Name" />
                             </label>
-                            <label class="xl:w-1/4 xl:inline-flex  items-center flex xl:border-none border-t border-gray-200 py-3">
-                                <span class="text-right px-2 xl:px-0 xl:text-none">ZIP</span>
-                                <input name="postal_code" class="focus:outline-none px-3" placeholder="98603" />
+                            <label className="inline-flex w-2/4 border-gray-200 py-3">
+                                <span className="text-right px-2">District</span>
+                                <input name="district" required className="focus:outline-none px-3" placeholder="District Name" />
                             </label>
-                            <label class="flex border-t border-gray-200 h-12 py-3 items-center select relative">
-                                <span class="text-right px-2">Country</span>
-                                <div id="country" class="focus:outline-none px-3 w-full flex items-center">
-                                    <select name="country" class="border-none bg-transparent flex-1 cursor-pointer appearance-none focus:outline-none">
+                           
+                            <label className="flex border-t border-gray-200 h-12 py-3 items-center select relative">
+                                <span className="text-right px-2">Country</span>
+                                <div id="country" className="focus:outline-none px-3 w-full flex items-center">
+                                    <select defaultValue={"BN"} name="country" className="border-none bg-transparent flex-1 cursor-pointer appearance-none focus:outline-none">
+                                        <option value="BN">Bangladesh</option>
+                                        <option value="PK">Pakistan</option>
+                                        <option value="AG">Afganisthan</option>
+                                        <option value="IN">India</option>
                                         <option value="AU">Australia</option>
                                         <option value="BE">Belgium</option>
                                         <option value="BR">Brazil</option>
@@ -81,57 +108,71 @@ const Checkout = () => {
                                 </div>
                             </label>
                         </fieldset>
-                    </section>
+                        <button className="w-full bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase">
+                            Submit form
+                        </button>
+                    
                 </form>
             </div>
-            <div class="rounded-md">
+            <div className="rounded-md">
                 <section>
-                    <h2 class="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Payment Information</h2>
-                    <fieldset class="mb-3 bg-white shadow-lg rounded text-gray-600">
-                        <label class="flex border-b border-gray-200 h-12 py-3 items-center">
-                            <span class="text-right px-2">Card</span>
-                            <input name="card" class="focus:outline-none px-3 w-full" placeholder="Card number MM/YY CVC" required=""/>
+                    <h2 className="uppercase tracking-wide text-lg font-semibold text-gray-700 my-2">Payment Information</h2>
+                    <fieldset className="mb-3 bg-white shadow-lg rounded text-gray-600">
+                        <label className="flex border-b border-gray-200 h-12 py-3 items-center">
+                            <span className="text-right pl-2 pr-12 border-r-2">Card</span>
+                            <input name="card" className="focus:outline-none px-3 w-full" placeholder="Card number MM/YY CVC" required=""/>
                         </label>
                     </fieldset>
+                    <fieldset className=" mb-3 bg-white shadow-lg rounded text-gray-600">
+                        <label className="after:pr-5  flex border-b border-gray-200 h-12 py-3 items-center">
+                            <span className="text-right pl-2 border-r-2 pr-4">Currency</span>
+                            <select  defaultValue="BDT" name="currency" id="" className=" focus:outline-none pl-3 pr-8 w-full">
+                            <option value="BDT">BDT</option>
+                            <option value="USD">USD</option>
+                            <option value="Rupee">Rupee</option>
+                    </select>
+                        </label>
+                    </fieldset>
+                    
                 </section>
             </div>
-            <button class="submit-button px-4 py-3 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
+            <button className="submit-button px-4 py-3 rounded-full bg-pink-400 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
                 Pay ${cart.cartTotalAmount + 15}
             </button>
         </div>
-        <div class="col-span-1 bg-white pt-10 lg:block hidden">
-            <h1 class="py-6 border-b-2 text-xl text-gray-600 px-8">Order Summary</h1>
-            <ul class="py-6 border-b space-y-6 px-8">
+        
+        <div className="lg:col-span-1 col-span-3 bg-white pt-10 lg:block ">
+            <h1 className="py-6 border-b-2 text-xl text-gray-600 px-8">Order Summary</h1>
+            <ul className="py-6 border-b space-y-6 px-8">
              { cart.cartItems.map((item, index)=>
              <li key={index}
-              class="grid grid-cols-6 gap-2 border-b-1">
-                    <div class="col-span-1 self-center">
-                        <img src={item.img} alt="Product" class="rounded w-full"/>
+              className="grid grid-cols-6  gap-2 border-b-1">
+                    <div className="col-span-2 self-center">
+                        <img src={item.img} alt="Product" className=" w-20 md:w-14"/>
                     </div>
-                    <div class="flex flex-col col-span-3 pt-2">
-                        <span class="text-gray-600 text-md font-semi-bold">{item.name}</span>
-                        <span class="text-gray-400 text-sm inline-block pt-2">Red Headphone</span>
+                    <div className="flex flex-col col-span-2 pt-2">
+                        <span className="text-gray-600 text-md font-semi-bold">{item.name}</span>
                     </div>
-                    <div class="col-span-2 pt-3">
-                        <div class="flex items-center space-x-2 text-sm justify-between">
-                            <span class="text-gray-400">{item.cartQuantity} x ${item.price}</span>
-                            <span class="text-pink-400 font-semibold inline-block">{item.price * item.cartQuantity}</span>
+                    <div className="col-span-2 pt-3">
+                        <div className="flex items-center space-x-2 text-sm justify-between">
+                            <span className="text-gray-400">{item.cartQuantity} x ${item.price}</span>
+                            <span className="text-pink-400 font-semibold inline-block">{item.price * item.cartQuantity}</span>
                         </div>
                     </div>
                 </li>)}
                 
             </ul>
-            <div class="px-8 border-b">
-                <div class="flex justify-between py-4 text-gray-600">
+            <div className="px-8 border-b">
+                <div className="flex justify-between py-4 text-gray-600">
                     <span>Subtotal</span>
-                    <span class="font-semibold text-pink-500">${cart.cartTotalAmount}</span>
+                    <span className="font-semibold text-pink-500">${cart.cartTotalAmount}</span>
                 </div>
-                <div class="flex justify-between py-4 text-gray-600">
+                <div className="flex justify-between py-4 text-gray-600">
                     <span>Shipping</span>
-                    <span class="font-semibold text-pink-500">$15</span>
+                    <span className="font-semibold text-pink-500">$15</span>
                 </div>
             </div>
-            <div class="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
+            <div className="font-semibold text-xl px-8 flex justify-between py-8 text-gray-600">
                 <span>Total</span>
                 <span>${cart.cartTotalAmount + 15}</span>
             </div>

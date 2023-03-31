@@ -1,0 +1,118 @@
+
+.form span:nth-child(1) {
+    background: #ffda05;
+    animation: 5s span1 infinite linear;
+    animation-delay: 1s;
+    top: 0;
+    left: -48%;
+  }
+  .form span:nth-child(2) {
+    background: #00a800;
+    bottom: 0;
+    right: -48%;
+    animation: 5s span2 infinite linear;
+  }
+  .form span:nth-child(3) {
+    background: #800080;
+    top: 0;
+    animation: 5s span3 infinite linear;
+    right: -48%;
+  }
+  .form span:nth-child(4) {
+    animation: 5s span4 infinite linear;
+    animation-delay: 1s;
+    background: #ff0000;
+    bottom: 0;
+    left: -48%;
+  }
+  
+  @keyframes span1 {
+    0% {
+      top: -48%;
+      left: -48%;
+    }
+    25% {
+      top: -48%;
+      left: 98%;
+    }
+    50% {
+      top: 98%;
+      left: 98%;
+    }
+    75% {
+      top: 98%;
+      left: -48%;
+    }
+    100% {
+      top: -48%;
+      left: -48%;
+    }
+  }
+  
+  @keyframes span2 {
+    0% {
+      bottom: -48%;
+      right: -48%;
+    }
+    25% {
+      bottom: -48%;
+      right: 98%;
+    }
+    50% {
+      bottom: 98%;
+      right: 98%;
+    }
+    75% {
+      bottom: 98%;
+      right: -48%;
+    }
+    100% {
+      bottom: -48%;
+      right: -48%;
+    }
+  }
+  @keyframes span3 {
+    0% {
+      top: -48%;
+      left: -48%;
+    }
+    25% {
+      top: -48%;
+      left: 98%;
+    }
+    50% {
+      top: 98%;
+      left: 98%;
+    }
+    75% {
+      top: 98%;
+      left: -48%;
+    }
+    100% {
+      top: -48%;
+      left: -48%;
+    }
+  }
+  @keyframes span4 {
+    0% {
+      bottom: -48%;
+      left: -48%;
+    }
+    25% {
+      bottom: -48%;
+      right: 98%;
+    }
+    50% {
+      bottom: 98%;
+      right: 98%;
+    }
+    75% {
+      bottom: 98%;
+      right: -48%;
+    }
+    100% {
+      bottom: -48%;
+      right: -48%;
+    }
+  }
+  

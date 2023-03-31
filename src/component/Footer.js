@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer grid grid-cols-1 md:grid-cols-3  p-10 bg-black text-white ">
+    <footer className="footer relative bottom-0 grid grid-cols-1 md:grid-cols-3  p-10 bg-black text-white ">
   <div className="w-full">
     <span className="footer-title md:inline block mx-auto text-lg">Services</span> 
     <a className="link link-hover block mx-auto md:inline">Branding</a>
